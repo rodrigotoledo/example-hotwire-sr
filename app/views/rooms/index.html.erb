@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Rooms</h1>
+
+<div id="chat_rooms">
+  <% @rooms.each do |room| %>
+    <%= render room %>
+  <% end %>
+</div>
+<hr />
+<%= link_to "New room", new_room_path, class: 'btn btn-primary' %>

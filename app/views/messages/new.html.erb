@@ -1,0 +1,14 @@
+<h1>New Message</h1>
+
+
+<%= form_with(model: [@message.room, @message]) do |form| %>
+
+<div class="input-group">
+  <%= form.text_field :content, class: 'form-control' %>
+  <div class="input-group-preppend">
+    <%=form.submit 'Send message'
+  </div>
+</div>
+<% end %>
+
+<%= link_to "back", @message.room %>

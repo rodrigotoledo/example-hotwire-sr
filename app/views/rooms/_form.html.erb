@@ -1,0 +1,32 @@
+
+<%= bootstrap_form_for(room) do |form| %>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+
+        <% if room.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+            <ul>
+              <% room.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= form.text_field :name %>
+
+      </p>
+    </div>
+    <div class="card-footer">
+      <%= turbo_frame_tag "chat_room" do %>
+        <div class="btn-group" role="group" aria-label="Actions">
+          <%= form.submit 'Save', class: 'btn btn-success' %>
+          <%= link_to "Show this room", room, class: 'btn btn-primary', 'data-turbo-frame': '_top' %>
+          <%= link_to "Back to rooms", rooms_path, class: 'btn btn-secondary', 'data-turbo-frame': '_top' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
