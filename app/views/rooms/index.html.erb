@@ -2,10 +2,10 @@
 
 <h1>Rooms</h1>
 
-<div id="chat_rooms">
-  <% @rooms.each do |room| %>
-    <%= render room %>
-  <% end %>
-</div>
+<%= turbo_stream_from "chat_rooms" %>
+<%= turbo_frame_tag "chat_rooms" do %>
+  <%=render @rooms %>
+<% end %>
 <hr />
-<%= link_to "New room", new_room_path, class: 'btn btn-primary' %>
+<%= turbo_frame_tag 'new_chat_room', src: new_room_path, target: "_top" %>
+

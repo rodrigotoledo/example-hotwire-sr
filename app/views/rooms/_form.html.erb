@@ -20,7 +20,7 @@
       </p>
     </div>
     <div class="card-footer">
-      <%= turbo_frame_tag "chat_room" do %>
+      <%= turbo_frame_tag "_top" do %>
         <div class="btn-group" role="group" aria-label="Actions">
           <%= form.submit 'Save', class: 'btn btn-success' %>
           <%= link_to "Show this room", room, class: 'btn btn-primary', 'data-turbo-frame': '_top' %>

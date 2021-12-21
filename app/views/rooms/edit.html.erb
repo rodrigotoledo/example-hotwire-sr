@@ -1,11 +1,9 @@
 <h1>Editing room</h1>
 
-<%= turbo_frame_tag "chat_room" do %>
+<%= turbo_frame_tag "chat_rooms" do %>
   <%= render "form", room: @room %>
 <% end %>
 
-Deleniti laboriosam totam ipsa qui non ratione non. Nisi qui iste sint voluptatibus. Non laborum exercitationem molestiae.
- 
-Quae eveniet sint. Aut quae laborum quia sapiente deleniti esse. Delectus accusamus nesciunt. Officia earum assumenda dolores ut qui pariatur cum voluptatem. Est et aliquam. Hic sit omnis et ut corrupti sed qui qui.
- 
-Ut fugit omnis fugiat nobis officia ea minima est sunt. In beatae non cum deleniti delectus est consequuntur dolor. Cum esse quia voluptates ullam amet delectus veniam. Suscipit aut molestiae facilis quasi doloribus nulla eos velit et. Explicabo minus et iure ea quaerat amet officia. Aut qui modi modi aut ea illum maiores illo amet.
+<div id="messages">
+  <%= render @room.messages %>
+</div>

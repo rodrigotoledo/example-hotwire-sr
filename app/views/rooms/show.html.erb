@@ -1,11 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<%= turbo_frame_tag "chat_room" do %>
+<%= turbo_frame_tag "chat_rooms" do %>
   <%= render @room %>
 <% end %>
 
-<div id="messages">
+<h5>Messages</h5>
+<%= turbo_frame_tag "messages" do %>
   <%= render @room.messages %>
-</div>
+<% end %>
 <hr />
-<%= link_to "New message", new_room_message_path(@room), class: 'btn btn-primary' %>
+<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "messages" %>
