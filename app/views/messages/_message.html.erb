@@ -1,5 +1,6 @@
-<div class="card" id="<%= dom_id message %>">
+<div class="card mb-3" id="<%= dom_id message %>">
   <div class="card-body">
     <p class="card-text"><%= message.content %></p>
+    <p class="card-footer"><%= l message.created_at, format: :short %></p>
   </div>
 </div>

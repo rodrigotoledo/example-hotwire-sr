@@ -5,6 +5,7 @@
 <% end %>
 
 <h5>Messages</h5>
+<%= turbo_stream_from "messages" %>
 <%= turbo_frame_tag "messages" do %>
   <%= render @room.messages %>
 <% end %>
