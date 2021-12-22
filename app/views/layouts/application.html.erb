@@ -16,7 +16,10 @@
       <main>
         <%= yield %>
         <hr />
-        <%= link_to "New room", new_room_path, class: 'btn btn-primary' %>
+        <div class="btn-group" role="group" aria-label="Actions">
+          <%= link_to "New room", new_room_path, class: 'btn btn-primary' %>
+          <%= link_to "Back to rooms", rooms_path, class: 'btn btn-secondary' %>
+        </div>
       </main>
     </div>
   </body>

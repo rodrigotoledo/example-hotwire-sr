@@ -6,6 +6,3 @@
 <%= turbo_frame_tag "chat_rooms" do %>
   <%=render @rooms %>
 <% end %>
-<hr />
-<%= turbo_frame_tag 'new_chat_room', src: new_room_path, target: "_top" %>
-
