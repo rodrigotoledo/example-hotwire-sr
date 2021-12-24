@@ -3,6 +3,7 @@
 <%= turbo_frame_tag "chat_rooms" do %>
   <%= render @room %>
 <% end %>
+<hr />
 
 <h5>Messages</h5>
 <%= turbo_stream_from "messages" %>
