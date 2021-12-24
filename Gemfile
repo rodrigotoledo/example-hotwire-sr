@@ -72,3 +72,5 @@ group :test do
 end
 gem "bootstrap_form", "~> 5.0"
 gem "faker", "~> 2.19"
+
+gem "cable_ready", "5.0.0.pre8"

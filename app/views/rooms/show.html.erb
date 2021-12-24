@@ -11,4 +11,4 @@
   <%= render @room.messages %>
 <% end %>
 <hr />
-<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "messages" %>
+<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "messages_#{@room.id}" %>

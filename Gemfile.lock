@@ -69,6 +69,9 @@ GEM
       actionpack (>= 5.2)
       activemodel (>= 5.2)
     builder (3.2.4)
+    cable_ready (5.0.0.pre8)
+      rails (>= 5.2)
+      thread-local (>= 1.1.0)
     capybara (3.36.0)
       addressable
       matrix
@@ -168,6 +171,7 @@ GEM
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
     thor (1.1.0)
+    thread-local (1.1.0)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -195,6 +199,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   bootstrap_form (~> 5.0)
+  cable_ready (= 5.0.0.pre8)
   capybara (>= 3.26)
   debug (>= 1.0.0)
   faker (~> 2.19)

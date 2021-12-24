@@ -1,3 +1,5 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "cable_ready": "^5.0.0-pre8"
+  }
 }
