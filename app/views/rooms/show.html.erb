@@ -6,8 +6,8 @@
 <hr />
 
 <h5>Messages</h5>
-<%= turbo_stream_from "messages" %>
-<%= turbo_frame_tag "messages" do %>
+<%= turbo_stream_from "messages_#{@room.id}" %>
+<%= turbo_frame_tag "messages_#{@room.id}" do %>
   <%= render @room.messages %>
 <% end %>
 <hr />

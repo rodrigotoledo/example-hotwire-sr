@@ -2,7 +2,10 @@
   <div class="card-body">
     <p class="card-text"><%= room.name %></p>
   </div>
-  <div class="card-footer">Mensagens: <div class="messages_count"><%=room.messages.count %></div></div>
+  <div class="card-footer">Mensagens:
+    <%= turbo_stream_from "messages" %>
+    <span id="count_message_<%=room.id%>"><%=room.messages.count %></span>
+  </div>
   <div class="card-footer">
     <%= link_to "Edit this room", edit_room_path(room), class: 'btn btn-success' %>
   </div>
