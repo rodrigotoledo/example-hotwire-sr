@@ -36,3 +36,5 @@
 tmp
 log
 test
+node_modules
+yarn*
