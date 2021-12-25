@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    @message = @room.messages.build
+    @message = @room.messages.build(user_id: current_user.id)
   end
 
   # GET /messages/1/edit
@@ -21,7 +21,8 @@ class MessagesController < ApplicationController
 
   # POST /messages or /messages.json
   def create
-    @message = @room.messages.create!(message_params)
+    @message = @room.messages.build(message_params)
+    @message.user_id = current_user.id
 
     respond_to do |format|
       if @message.save

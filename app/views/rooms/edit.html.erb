@@ -4,6 +4,14 @@
   <%= render "form", room: @room %>
 <% end %>
 
-<div id="messages">
-  <%= render @room.messages %>
-</div>
+<hr />
+<hr />
+
+<h5>Messages</h5>
+<%= turbo_stream_from "messages_#{@room.id}" %>
+<%= turbo_frame_tag "messages_#{@room.id}" do %>
+  <%= render partial: "messages/message", collection: @room.messages, locals: {user: current_user} %>
+<% end %>
+<hr />
+<hr />
+<%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "messages_#{@room.id}", locals: {user: current_user} %>
