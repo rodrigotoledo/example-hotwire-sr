@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   include CableReady::Broadcaster
   belongs_to :room
+  belongs_to :user
   after_create_commit do
     broadcast_append_to "messages_#{self.room_id}", target: "messages_#{self.room_id}"
     broadcast_update_to "messages", target: "count_message_#{self.room_id}", html: self.room.messages.count

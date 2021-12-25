@@ -12,16 +12,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   </head>
 
-  <body>
+  <body class="align-middle">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Hotwire Chat</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <%=link_to "New Room", new_room_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%=link_to "Your account", edit_user_registration_path, class: 'nav-link' %>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            <%=link_to "Logout", destroy_user_session_path, method: :delete %>
+          </span>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       <main>
-        <div id="testing"></div>
         <%= yield %>
+        <% if user_signed_in? %>
         <hr />
         <div class="btn-group" role="group" aria-label="Actions">
           <%= link_to "New room", new_room_path, class: 'btn btn-primary' %>
           <%= link_to "Back to rooms", rooms_path, class: 'btn btn-secondary' %>
         </div>
+        <% end %>
       </main>
     </div>
   </body>
