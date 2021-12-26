@@ -26,11 +26,9 @@
     <%= f.label :current_password %>
   </div>
 
-  <button class="w-100 btn btn-lg btn-primary" type="submit">Save</button>
+  <button class="w-100 btn btn-lg btn-primary mt-2 mb-2" type="submit">Save</button>
 <% end %>
 
-<h3>Cancel my account</h3>
+<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-outline-secondary' %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= render "devise/shared/links" %>
